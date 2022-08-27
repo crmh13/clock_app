@@ -54,5 +54,10 @@ namespace clock_app
                 Top += e.Y - mouseY;
             }
         }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            TopMost = true;
+        }
     }
 }
