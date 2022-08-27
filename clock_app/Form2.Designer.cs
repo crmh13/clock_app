@@ -59,7 +59,7 @@
             // numericUpDownMinute
             // 
             this.numericUpDownMinute.Font = new System.Drawing.Font("Yu Gothic UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.numericUpDownMinute.Location = new System.Drawing.Point(215, 34);
+            this.numericUpDownMinute.Location = new System.Drawing.Point(216, 34);
             this.numericUpDownMinute.Maximum = new decimal(new int[] {
             59,
             0,
@@ -90,7 +90,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Yu Gothic UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(160, 36);
+            this.label1.Location = new System.Drawing.Point(159, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 96);
             this.label1.TabIndex = 3;
