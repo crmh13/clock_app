@@ -62,6 +62,7 @@ namespace clock_app
             {
                 TopMost = true;
                 timer1.Stop();
+                mediaPlayer.settings.setMode("loop", true);
                 mediaPlayer.URL = "timer.mp3";
                 mediaPlayer.controls.play();
                 
