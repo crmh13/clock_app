@@ -36,9 +36,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.サウンド選択SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSecond)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // numericUpDownHour
@@ -123,6 +127,28 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.サウンド選択SToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(551, 33);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // サウンド選択SToolStripMenuItem
+            // 
+            this.サウンド選択SToolStripMenuItem.Name = "サウンド選択SToolStripMenuItem";
+            this.サウンド選択SToolStripMenuItem.Size = new System.Drawing.Size(138, 29);
+            this.サウンド選択SToolStripMenuItem.Text = "サウンド選択(&S)";
+            this.サウンド選択SToolStripMenuItem.Click += new System.EventHandler(this.サウンド選択SToolStripMenuItem_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -135,14 +161,18 @@
             this.Controls.Add(this.numericUpDownSecond);
             this.Controls.Add(this.numericUpDownMinute);
             this.Controls.Add(this.numericUpDownHour);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "タイマー";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHour)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinute)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSecond)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,5 +187,8 @@
         private Label label2;
         private Button button1;
         private System.Windows.Forms.Timer timer1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem サウンド選択SToolStripMenuItem;
+        private OpenFileDialog openFileDialog1;
     }
 }
