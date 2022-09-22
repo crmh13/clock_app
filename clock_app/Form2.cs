@@ -9,6 +9,8 @@ namespace clock_app
         private TimeSpan countTime;
         private bool timerStart = false;
         private readonly WindowsMediaPlayer mediaPlayer = new ();
+        private string? soundFileName;
+        
         public Form2()
         {
             InitializeComponent();
@@ -16,6 +18,26 @@ namespace clock_app
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (File.Exists("sound.conf"))
+            {
+                soundFileName = File.ReadAllText("sound.conf");
+                if (!File.Exists(soundFileName))
+                {
+                    MessageBox.Show("タイマー音を選択してください。",
+                    "エラー",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                    return;
+                }
+            } else
+            {
+                MessageBox.Show("タイマー音を選択してください。",
+                    "エラー",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+ 
             if (!timerStart)
             {
                 int Hour = (int)numericUpDownHour.Value;
@@ -43,7 +65,6 @@ namespace clock_app
                 numericUpDownSecond.ReadOnly = false;
                 button1.Text = "START";
                 timerStart = false;
-                timer1.Stop();
                 mediaPlayer.controls.stop();
             }
             
@@ -63,7 +84,7 @@ namespace clock_app
                 TopMost = true;
                 timer1.Stop();
                 mediaPlayer.settings.setMode("loop", true);
-                mediaPlayer.URL = "timer.mp3";
+                mediaPlayer.URL = soundFileName;
                 mediaPlayer.controls.play();
                 
             }
@@ -113,6 +134,18 @@ namespace clock_app
             {
                 mediaPlayer.controls.stop();
                 Close();
+            }
+        }
+
+        private void サウンド選択SToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.InitialDirectory = "c:\\";
+            openFileDialog1.Filter = "sound files (*.mp3;*.wma;*.wmv;*.wm;*.wav;*.flac)|*.mp3;*.wma;*.wmv;*.wm;*.wav;*.flac";
+            openFileDialog1.FileName = "";
+            DialogResult dr = openFileDialog1.ShowDialog();
+            if (dr == System.Windows.Forms.DialogResult.OK)
+            {
+                File.WriteAllText("sound.conf", openFileDialog1.FileName);
             }
         }
     }
